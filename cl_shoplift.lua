@@ -29,7 +29,8 @@ local function AttemptPoliceAlert()
             chance = Config.PoliceNightAlertChance
         end
         if math.random() <= chance then
-            TriggerServerEvent('police:server:policeAlert', Config.Translations.PoliceAlertMessage)
+            -- TriggerServerEvent('police:server:policeAlert', Config.Translations.PoliceAlertMessage)
+            exports['ps-dispatch']:ShopLifting() -- ps-dispatch
         end
         AlertSend = true
         SetTimeout(Config.AlertCooldown, function()
